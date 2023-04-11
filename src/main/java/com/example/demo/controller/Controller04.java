@@ -38,6 +38,14 @@ public class Controller04 {
 		System.out.println("email : " + email);
 	}
 	
+	/*
+	@RequestMapping("link3")
+	public void method03(HttpServletRequest request) {
+		String address = request.getParameter("address");
+		System.out.println("address : " + address);
+	}
+	*/
+	
 	@RequestMapping("link3")
 	public void method03(@RequestParam("address") String address) {
 		System.out.println("address : " + address);
