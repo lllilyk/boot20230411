@@ -101,4 +101,14 @@ public class Controller07 {
 		model.addAttribute("value", o1);
 	}
 	
+	@RequestMapping("link10")
+	public void method10(Model model) {
+		Dto04 obj = new Dto04();
+		obj.setName("송태섭");
+		obj.setAge(20);
+		
+		model.addAttribute("val", obj);
+		
+	}
+	
 }
