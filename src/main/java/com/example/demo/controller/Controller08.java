@@ -44,19 +44,21 @@ public class Controller08 {
 
 	@RequestMapping("link5")
 	// model attribute의 이름을 생략x : 내가 정한 클래스명으로 들어옴
-	public void method05(@ModelAttribute("dto02") Dto02 dto02,
-						 @ModelAttribute("dto03") Dto03 dto03) {
+	public void method05(@ModelAttribute("PPyong") Dto02 dto02,
+						 @ModelAttribute("PPinyeong") Dto03 dto03) {
 		//3. add attribute
-		dto02.setCompany("microsoft");
-		dto03.setName("bill gates");
+		dto02.setCompany("산왕");
+		dto03.setName("명헌");
 		//4. forward
 	}
 	
 	@RequestMapping("link6")
-	// model attribute의 이름을 생략 : 클래스 명이 lowerCamelCase 형식에 맞춰 들어옴
-	// 예) CompanyMember -> companyMember myName02
-	public String method06(@ModelAttribute Dto02 dto02,
-							@ModelAttribute Dto03 dto03) {
+	// model attribute의 이름을 생략 : 
+	// 클래스 명을 따서 model attribute의 이름을 정해주는데
+	// lowerCamelCase 형식에 맞춰 들어옴
+	// 예) CompanyMember -> companyMember &  Dto02 >> dto02로 들어올 것을 유추가능!
+	public String method06(@ModelAttribute           Dto02 dto02,
+							@ModelAttribute          Dto03 dto03) {
 		//3. add attribute
 		dto02.setCompany("apple");
 		dto03.setName("steve jobs");
@@ -64,4 +66,11 @@ public class Controller08 {
 		return "/sub8/link5";
 	}
 
+	
+	
+	
+	
+	
+	
+	
 }

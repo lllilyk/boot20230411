@@ -4,6 +4,7 @@ public class Dto02 {
 	private String model;
 	private int price;
 	private String company;
+	
 	public String getModel() {
 		return model;
 	}
