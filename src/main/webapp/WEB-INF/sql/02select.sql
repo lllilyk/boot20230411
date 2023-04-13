@@ -2,6 +2,7 @@
 SELECT * FROM Customers;
 -- 특정 테이블(Customers)의 CustomerName 필드만 
 SELECT CustomerName FROM Customers;
+
 SELECT ContactName FROM Customers;
 SELECT Country FROM Customers;
 

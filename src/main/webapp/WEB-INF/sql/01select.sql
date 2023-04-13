@@ -19,6 +19,6 @@ SELECT * FROM Products;
 
 -- 작성 관습이긴 한데
 -- sql(mariadb)은 대소문자 구분 안함(테이블명은 구분)
--- 일단은
+-- 일단은Suppliers
 -- 키워드는 대문자 
 -- 테이블명, 컬럼명은 소문자
