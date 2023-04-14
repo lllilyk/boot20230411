@@ -13,9 +13,9 @@
 	integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
 	crossorigin="anonymous">
 </head>
-	<!-- table.table>thead>tr>th*3^^tbody -->
 <body>
 	<h1>고객 목록</h1>
+	<!-- table.table>thead>tr>th*3^^tbody -->
 	<table class="table">
 		<thead>
 			<tr>
