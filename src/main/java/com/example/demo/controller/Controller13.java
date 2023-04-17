@@ -31,7 +31,7 @@ public class Controller13 {
 					WHERE CustomerID
 					""";
 		
-		List<Customer> obj = new ArrayList<>();
+			List<Customer> obj = new ArrayList<>();
 
 		
 			Connection con = DriverManager.getConnection(url, name, password);

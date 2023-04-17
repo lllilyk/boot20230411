@@ -34,4 +34,8 @@ WHERE City NOT IN ('Berlin', 'London', 'Madrid', 'Paris');
 SELECT * FROM Products
 WHERE CategoryID NOT IN(1, 3, 5, 7);
 
+-- 고객명(CustomerName), 계약명(ContactName)에 'or'이 포함된 고객들 조회
+SELECT * FROM Customers
+WHERE CustomerName like '%or%' 
+	OR ContactName like '%or%';
 

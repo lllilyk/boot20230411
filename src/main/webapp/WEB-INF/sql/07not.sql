@@ -15,3 +15,6 @@ SELECT * FROM Employees WHERE BirthDate < '1950-01-01' OR BirthDate > '1959-12-3
 SELECT * FROM Products WHERE NOT CategoryID = 1 AND CategoryID = 2;
 SELECT * FROM Products WHERE (NOT CategoryID = 1 OR CategoryID = 2);
 SELECT * FROM Products WHERE (CategoryID <> 1 AND CategoryID <> 2);
+
+SELECT CustomerID, CustomerName, Address From Customers
+WHERE CustomerID;
