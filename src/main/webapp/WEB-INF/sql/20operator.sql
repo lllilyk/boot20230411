@@ -33,3 +33,8 @@ SELECT ProductName, Price*1300 FROM Products;
 SELECT SUBSTRING('hello world', 3, 3);
 
 SELECT CustomerName FROM Customers;
+SELECT SUBSTRING(CustomerName, 1, 3) FROM Customers;
+
+-- 고객 테이블에서 고객명, 나라이름(앞3글자만) 조회
+SELECT CustomerName, substring(Country, 1, 3) Country FROM Customers;
+

@@ -4,7 +4,8 @@ SELECT SUM(Price) FROM Products;
 
 SELECT SUM(Price) FROM Products
 GROUP BY CategoryID;
-SELECT CategoryID, SUM(Price) FROM Products GROUP BY CategoryID;
+SELECT CategoryID, SUM(Price) FROM Products 
+GROUP BY CategoryID;
 
 SELECT Country, COUNT(CustomerID) FROM Customers
 GROUP BY Country; 
@@ -50,4 +51,3 @@ GROUP BY Country, City;
 -- 나라별, 도시별 공급자 수 조회
 SELECT Country, City, Count(SupplierName) FROM Suppliers 
 Group BY Country, City;
-

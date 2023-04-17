@@ -4,10 +4,14 @@ SELECT * FROM Customers;
 SELECT COUNT(CustomerID) FROM Customers;
 SELECT COUNT(CustomerName) FROM Customers;
 
+SELECT CustomerID FROM Customers
+WHERE Country = 'Brazil';
+
 SELECT COUNT(CustomerID) FROM Customers
 WHERE Country = 'Brazil';
 
 -- DISTINCT : 중복 제거
+
 SELECT Country FROM Customers;
 SELECT DISTINCT Country FROM Customers;
 
@@ -22,4 +26,5 @@ SELECT COUNT(EmployeeID) FROM Employees;
 SELECT COUNT(CustomerName) FROM Customers WHERE City = 'São Paulo';
 
 -- 공급자(SUPPLIER)가 있는 나라 수(중복 제거)
+SELECT COUNT(Country) FROM Suppliers;
 SELECT COUNT(DISTINCT Country) FROM Suppliers; 
