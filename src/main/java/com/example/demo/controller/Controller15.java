@@ -192,7 +192,8 @@ public class Controller15 {
 	}
 	
 	@RequestMapping("link12")
-	public void method12(Supplier supplier) throws Exception{
+	@ResponseBody
+	public String method12(Supplier supplier) throws Exception{
 		
 		String sql = """
 				INSERT INTO Suppliers
@@ -201,28 +202,30 @@ public class Controller15 {
 				""";
 		
 		Connection con = DriverManager.getConnection(url, this.name, password);
-		PreparedStatement pstmt = con.prepareStatement(sql);
+		PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 		
 		try(con; pstmt;) {
 			pstmt.setString(1, supplier.getName());
 			pstmt.setString(2, supplier.getContactName());
 			pstmt.setString(3, supplier.getAddress());
 			pstmt.setString(4, supplier.getCity());
-			pstmt.setInt(5, supplier.getPostalCode());
+			pstmt.setString(5, supplier.getPostalCode());
 			pstmt.setString(6, supplier.getCountry());
-			pstmt.setInt(7, supplier.getPhone());
+			pstmt.setString(7, supplier.getPhone());
 			int count = pstmt.executeUpdate();
+			
+			// 자동생성된 컬럼(키) 값 얻기
+			ResultSet key = pstmt.getGeneratedKeys();
+			
+			int keyValue = 0;
+			if(key.next()) {				
+				keyValue = key.getInt(1);
+			}
+			
+			System.out.println(count + "개 데이터 입력됨");
+			System.out.println(keyValue + "번 공급자 데이터 입력됨");
+	
+			return keyValue + "번 공급자 데이터 입력됨";
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
