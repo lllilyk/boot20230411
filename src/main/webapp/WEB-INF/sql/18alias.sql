@@ -5,6 +5,7 @@ SELECT CustomerID, CustomerName FROM Customers;
 -- AS : CustomerID는 너무 길어서 id라고 쓰고 싶다
 SELECT CustomerID AS id, CustomerName AS name 
 FROM Customers;
+
 -- AS는 생략 가능
 SELECT CustomerID id, CustomerName name
 FROM Customers;
@@ -32,7 +33,7 @@ ORDER BY NumOfCustomer;
 SELECT Country C, COUNT(CustomerID) NumOfCustomer
 FROM Customers
 GROUP BY C
-ORDER BY 2;
+ORDER BY 2 DESC;
 
 -- keyword 사용시 필요한 경우에는 `backtick` 사용 BUT 되도록 지양
 SELECT Country AS `FROM` , CustomerName FROM Customers;

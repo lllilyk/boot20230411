@@ -23,6 +23,9 @@ SELECT CONCAT(firstName, ", ", lastName) AS EmployeeName FROM Employees;
 SELECT * FROM Products 
 WHERE Price*1300 >= 100000;
 
+SELECT * FROM Products
+WHERE Price*1000 >= 100000;
+
 SELECT ProductName, Price*1300 FROM Products;
 
 -- 부분 문자열 : substring
@@ -32,6 +35,7 @@ SELECT ProductName, Price*1300 FROM Products;
 -- 첫 글자는 인덱스 1
 SELECT SUBSTRING('hello world', 3, 3);
 
+SELECT SUBSTRING('ppyong', 3, 3);
 SELECT CustomerName FROM Customers;
 SELECT SUBSTRING(CustomerName, 1, 3) FROM Customers;
 

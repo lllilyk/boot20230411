@@ -5,9 +5,19 @@
 SELECT * FROM Suppliers
 WHERE ContactName = '';
 
+SELECT COUNT(ContactName) FROM Suppliers;
+SELECT * FROM Suppliers ORDER BY SupplierID DESC;
+INSERT INTO Suppliers
+(SupplierID, SupplierName, Address, City)
+VALUES
+(31, 'woosungjung', 'japan', 'akita');
+
+SELECT * FROM Suppliers
+WHERE ContactName IS NULL;
+
 -- IS NOT NULL : 값이 NULL 아닌 컬럼 조회
 SELECT * FROM Suppliers
-WHERE NOT ContactName IS NOT NULL
+WHERE ContactName IS NOT NULL
 ORDER BY 1 DESC;
 
 -- Customer 테이블에서 Address 컬럼이 null인 레코드 조회

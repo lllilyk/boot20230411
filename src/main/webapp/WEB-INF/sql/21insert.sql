@@ -17,6 +17,12 @@ INSERT INTO Customers
 VALUES
 (94, '송태섭', 'Tokyo', 'Japan');
 
+SELECT * FROM Customers ORDER BY CustomerID DESC;
+INSERT INTO Customers
+(CustomerID, CustomerName, City, Country)
+VALUES
+(92, '이명헌', 'Akita', 'Japan');
+
 -- supplier 테이블에 30번째 공급자 추가(모든 열)
 -- supplier 테이블에 31번째 공급자 추가
 -- supplierID, SupplierName, City, Country
