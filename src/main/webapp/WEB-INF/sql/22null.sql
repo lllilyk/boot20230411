@@ -30,16 +30,19 @@ WHERE Address IS NOT NULL
 ORDER BY 1 DESC;
 
 -- 집계함수에서 NULL 제외
+SELECT * FROM Customers ORDER BY 1 DESC;
+
 SELECT COUNT(CustomerID) FROM Customers;
 SELECT COUNT(Address) FROM Customers;
-SELECT COUNT(*) FROM Customers; -- null을 포함한 행 수
+SELECT COUNT(*) FROM Customers;
+
 
 -- 공급자 테이블에서 SupplierID 컬럼의 값 수 구하기
 -- 공급자 테이블에서 ContactName 칼럼의 값 수 구하기
 SELECT COUNT(SupplierID) FROM Suppliers;
 SELECT COUNT(ContactName) FROM Suppliers;
 
-SELECT * FROM Products ORDER BY 1 DESC;
+SELECT * FROM Products ORDER BY 1 DESC;                                                                                                                                                                                                                                                                          
 INSERT INTO Products
 VALUES (78, 'Cake', 12, 2, '조각', NULL);
 
@@ -47,8 +50,12 @@ INSERT INTO Products
 (ProductID, ProductName, SupplierID, CategoryID, Unit)
 VALUES(79, 'Pizza', 12, 2, '조각');
 
+SELECT COUNT(CategoryID) FROM Products WHERE CategoryID = 2;
 SELECT * FROM Products WHERE CategoryID = 2 ORDER BY 1 DESC;
--- 14
+-- 14 
+
+SELECT * FROM Employees ORDER BY 1 DESC;
+SELECT COUNT(EmployeeID) FROM Employees WHERE FirstName = '뿅뿅';
 
 SELECT SUM(Price) FROM Products WHERE CategoryID = 2;
 -- 276.75

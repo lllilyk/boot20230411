@@ -19,5 +19,3 @@ WHERE CategoryID = 2
     
 SELECT ProductName, IFNULL(Price, 0) * 1300 FROM Products
 WHERE CategoryID = 2; -- 산술 연산 결과도 null
-
-

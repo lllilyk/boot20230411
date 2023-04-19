@@ -1,0 +1,39 @@
+-- ALTER TABLE : 테이블 변경
+CREATE TABLE MyTable13 (
+	Col1 INT,
+    Col2 INT
+);
+
+-- 컬럼 추가 ADD COLUMN
+ALTER TABLE MyTable13
+ADD COLUMN Col3 VARCHAR(10);
+
+DESC MyTable13;
+
+ALTER TABLE MyTable13
+ADD COLUMN Col4 DEC(10, 2);
+
+-- 연습 5번째 컬럼 추가
+ALTER TABLE MyTable13
+ADD COLUMN Col5 DATE;
+
+DESC MyTable13;
+
+-- 첫 번째 컬럼으로 추가
+ALTER TABLE MyTable13 ADD COLUMN Col6 INT FIRST;
+DESC MyTable13;
+
+ALTER TABLE MyTable13 ADD COLUMN Col7 VARCHAR(13) FIRST;
+DESC MyTable13;
+
+-- 중간에 컬럼 추가
+ALTER TABLE MyTable13 ADD COLUMN Col8 VARCHAR(15) AFTER Col7;
+DESC MyTable13;
+
+-- 첫 번째 컬럼으로 하나 추가 
+-- 컬럼을 중간에 추가
+ALTER TABLE MyTable13 ADD COLUMN Col10 INT FIRST;
+ALTER TABLE MyTable13 ADD COLUMN Col9 DATE AFTER Col3;
+DESC MyTable13;
+
+

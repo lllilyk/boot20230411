@@ -1,6 +1,6 @@
 DESC MyTable10;
 
--- SHOW CREATE TABLE 테이블 생성 명령 보기
+-- SHOW CREATE TABLE : 테이블 생성 명령 보기
 SHOW CREATE TABLE MyTable10;
 CREATE TABLE `MyTable11` (
    `java` varchar(100) DEFAULT NULL,
