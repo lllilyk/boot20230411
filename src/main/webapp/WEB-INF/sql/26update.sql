@@ -2,6 +2,12 @@
 
 SELECT * FROM Customers WHERE CustomerID = 1;
 
+SELECT * FROM Employees WHERE EmployeeID = 16;
+
+UPDATE Employees 
+SET Notes = '산왕 에이스'
+WHERE EmployeeID = 16;
+
 UPDATE Customers            -- 테이블 명 
 SET CustomerName = '서태웅' -- 변경할 컬럼과 값
 WHERE CustomerID = 1;       -- 변경할 레코드의 조건
@@ -14,6 +20,12 @@ SET								-- 변경할 컬럼과 값은 ,(컴마)로 구분
     City = '서울',
     Country = '한국'
 WHERE CustomerID = 1;
+
+SELECT * FROM Employees ORDER BY 1 DESC;
+UPDATE Employees
+SET BirthDate = '2000-12-12',
+	Photo = 'Wanted'
+WHERE EmployeeID = 16;
 
 -- 1번 공급자의 이름, 도시, 나라 변경
 SELECT * FROM Suppliers WHERE SupplierID = 1;

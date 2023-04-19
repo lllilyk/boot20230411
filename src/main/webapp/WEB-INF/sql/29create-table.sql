@@ -1,5 +1,5 @@
 -- CREATE TABLE : 새 테이블 만들기
--- TABLE 이름 : 작성 규칙 (회사마다 다름)
+-- TABLE 이름 작성 규칙 (회사마다 다름)
 -- 우리 과정에서는 UpperCamelCase(테이블명은 대소문자 구별O)
 -- lower_snake_case, UPPER_SNAKE_CASE쓰기도 함
 

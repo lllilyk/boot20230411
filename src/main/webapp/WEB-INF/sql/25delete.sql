@@ -6,6 +6,10 @@
 -- SELECT 먼저 확인하고
 SELECT * FROM Customers WHERE CustomerID = 94;
 
+SELECT * FROM Employees ORDER BY 1 DESC;
+SELECT * FROM Employees WHERE EmployeeID = 13;
+DELETE FROM Employees WHERE EmployeeID = 13;
+
 -- 맞는지 확인되면 DELETE 실행
 DELETE FROM Customers -- 지울 테이블 명
 WHERE CustomerID = 94; -- 지울 레코드의 조건
