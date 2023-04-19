@@ -22,8 +22,13 @@ DESC Suppliers;
 INSERT INTO Suppliers
 (SupplierName, City)
 VALUES ('이명헌', 'AKITA');
+
+INSERT INTO Employees(LastName, FirstName, BirthDate, Photo, Notes)
+VALUES('이', '명헌', '2000-02-02', 'EmpID10.pic', 'ppyong');
+
+
 SELECT * FROM Suppliers ORDER BY 1 DESC; 
 
 SELECT * FROM Customers ORDER BY 1 DESC;
 
-SELECT * FROM Employees ORDER BY 1 DESC;
+SELECT * FROM Employees ORDER BY 1 DESC; 

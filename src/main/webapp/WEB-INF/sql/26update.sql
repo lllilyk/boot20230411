@@ -40,6 +40,8 @@ UPDATE Suppliers
 SET ContactName = '북산',
 	City = 'seoul'; -- where 절을 안쓰면 모든 레코드 값이 다 변경되므로 주의
     
+SELECT * FROM Suppliers;
+    
 UPDATE Suppliers
 SET 
 	PostalCode = concat('J', PostalCode)

@@ -102,8 +102,7 @@ public class Controller17 {
 					SupplierId = ?
 				""";
 
-		try (
-				Connection con = DriverManager.getConnection(url, username, password);
+		try (	Connection con = DriverManager.getConnection(url, username, password);
 				PreparedStatement pstmt = con.prepareStatement(sql);) {
 			pstmt.setString(1, supplier.getName());
 			pstmt.setString(2, supplier.getContactName());
@@ -116,9 +115,7 @@ public class Controller17 {
 
 			int cnt = pstmt.executeUpdate();
 			System.out.println(supplier.getId() + "번 공급자 수정됨");
-
 		}
-
 	}
 
 	// /sub17/link4?id=65
@@ -137,8 +134,8 @@ public class Controller17 {
 				FROM Suppliers
 				WHERE SupplierId = ?
 				""";
-		try (
-				Connection con = DriverManager.getConnection(url, username, password);
+		
+		try (	Connection con = DriverManager.getConnection(url, username, password);
 				PreparedStatement pstmt = con.prepareStatement(sql);) {
 
 			pstmt.setInt(1, id);
@@ -153,11 +150,10 @@ public class Controller17 {
 					supplier.setPostalCode(rs.getString("postalCode"));
 					supplier.setCountry(rs.getString("country"));
 					supplier.setPhone(rs.getString("phone"));
+					
 					model.addAttribute("supplier", supplier);
 				}
-
 			}
-
 		}
 	}
 
