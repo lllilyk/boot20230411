@@ -1,6 +1,9 @@
 package com.example.demo.controller;
 
 import java.sql.*;
+import java.sql.Date;
+import java.time.*;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
@@ -77,7 +80,7 @@ public class Controller00 {
 			
 			pstmt.setString(1, employee.getFirstName());
 			pstmt.setString(2, employee.getLastName());
-			pstmt.setString(3, employee.getBirthDate());
+			//pstmt.setString(3, employee.getBirthDate());
 			pstmt.setString(4, employee.getPhoto());
 			pstmt.setString(5, employee.getNotes());
 			pstmt.setInt(6, employee.getId());
@@ -87,10 +90,77 @@ public class Controller00 {
 		}
 	}
 	
+	// 존재하기만 하는 테이블의 각 컬럼에 데이터 넣기
+	// UPDATE
+	// 값을 받을 form을 가진 메소드(view와 연결)
+	@RequestMapping("link3")
+	public void method03() {
+		
+	}
 	
+	// 포워딩 받을 메소드
+	@RequestMapping("link4")
+	public void method04(
+						 @RequestParam("number") Integer num,
+						 @RequestParam("sDate") LocalDate sDate,
+						 @RequestParam("trip") LocalDateTime trip,
+						 @RequestParam("school") String school,
+						 @RequestParam("scoreAvg") Double scoreAvg
+			) throws Exception {
+		String sql = """
+				INSERT INTO PPPYONG (Number, Sdate, Trip, School, ScoreAvg)
+				VALUES (?, ?, ?, ?, ?) 
+				""";
+		
+		try(Connection con = DriverManager.getConnection(url, username, password);
+			PreparedStatement pstmt = con.prepareStatement(sql);){
+			
+			pstmt.setInt(1, num);
+			pstmt.setDate(2, Date.valueOf(sDate));
+			pstmt.setTimestamp(3, Timestamp.valueOf(trip));
+			pstmt.setString(4, school);
+			pstmt.setDouble(5, scoreAvg);
+			
+			int cnt = pstmt.executeUpdate();
+			System.out.println(cnt + "개 행 입력됨!");
+		}
+	}
 	
+	// 테이블 생성했고, 각 컬럼에 맞는 데이터 넣었으니 
+	// 모든 레코드 조회해보기
+	// SELECT
 	
-	
+	@RequestMapping("link5")
+	public void method05(Model model) throws Exception {
+		String sql = """
+				SELECT Number, 
+					   Sdate, 
+					   Trip, 
+					   School, 
+					   ScoreAvg
+				FROM PPPYONG
+				""";
+		
+		List<Ppong> list = new ArrayList<>();
+		
+		try(Connection con = DriverManager.getConnection(url, username, password);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);){
+			
+			while(rs.next()) {
+				Ppong p = new Ppong();
+				p.setNumber(rs.getInt("number"));
+				p.setSdate(rs.getDate("sdate").toLocalDate());
+				p.setTrip(rs.getTimestamp("trip").toLocalDateTime());
+				p.setSchool(rs.getString("school"));
+				p.setScoreAvg(rs.getDouble("scoreAvg"));
+				
+				list.add(p);
+			}
+			
+			model.addAttribute("love", list);
+		}
+	}
 	
 	
 	

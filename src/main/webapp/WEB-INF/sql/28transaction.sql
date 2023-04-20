@@ -13,8 +13,8 @@ CREATE TABLE Bank(
     money INT DEFAULT 0
 );
 SELECT * FROM Bank;
-INSERT INTO Bank VALUES ('A', 100000);
-INSERT INTO Bank VALUES ('B', 100000);
+INSERT INTO Bank VALUES ('A', 60000);
+INSERT INTO Bank VALUES ('B', 125000);
 
 -- 이체 5000원 (A -> B)
 UPDATE Bank 
@@ -43,6 +43,7 @@ SELECT * FROM Bank;
 -- 자동 커밋을 비활성화 한 상태이므로 언제든지 transaction이전으로 되돌리는 것이 가능
 
 ROLLBACK; -- 마지막 커밋으로 되돌리기
+USE w3schools;
 
 SELECT * FROM Bank; -- 5000원 입금 이전으로 돌아감
 
