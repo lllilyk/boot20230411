@@ -2,6 +2,16 @@ SELECT * FROM Employees ORDER BY 1 DESC;
 INSERT INTO Employees (EmployeeID, LastName, FirstName)
 VALUES (11, '박지성', '두개의 심장');
 
+SELECT * FROM Employees ORDER BY 1 DESC;
+
+INSERT INTO Employees
+VALUES (19, 'HAN', 'GYODONG', '1985-03-14', 'GYODONG.pic', 'B');
+
+INSERT INTO Employees(LastName, FirstName, Notes)
+VALUES ('ZZANG', 'SAYURI', 'Octopus');
+
+DESC Employees;
+
 -- EmployeeID는 작성하지 않아도 자동으로 +
 INSERT INTO Employees (LastName, FirstName)
 VALUES ('박지성', '두개의 심장');
