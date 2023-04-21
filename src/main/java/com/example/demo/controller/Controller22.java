@@ -107,4 +107,28 @@ public class Controller22 {
 		System.out.println(cnt + "행 입력!");
 	}
 	
+	// /sub22/link11?prop2=mybatis&prop3=321
+	@RequestMapping("link11")
+	public String method11(Dto11 dto) {
+		System.out.println("prop1:" + dto.getProp1());
+		int cnt = mapper.sql07(dto);
+		System.out.println(cnt + "행 입력 완료!");
+		System.out.println("prop1:" + dto.getProp1());
+		
+		return dto.getProp1() + "번째 데이터 입력완료";
+	}
+	
+	// /sub22/link12?age=40&name=son&score=9.9
+	// 요청시 MyTable40에 데이터 추가되도록 코드 작성
+	@RequestMapping("link12")
+		public String method12(Dto12 dto) {
+		System.out.println("id : "+ dto.getId());
+		int cnt = mapper.sql08(dto);
+		System.out.println(cnt + "행 입력됨!");
+		System.out.println("id : "+ dto.getId());
+		
+		return dto.getId() + "번째 데이터 입력끝~";
+	}
+	
+	
 }

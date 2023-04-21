@@ -50,13 +50,26 @@ public interface Mapper03 {
 	
 	@Insert("""
 			INSERT INTO MyTable38(Col1, Col2, Col3, Col4, Col5, Col6)
-			VALUES (#{dto01.prop1}, #{dto02.age}, #{dto01.prop2}, #{dto02.name}, #{dto01.prop3}, #{dto02.score})
+			VALUES (#{dto01.prop1}, #{dto02.age}, #{dto01.prop2},#{dto02.name}, #{dto01.prop3}, #{dto02.score})
 			""")
 	int sql06(Dto09 dto01, Dto10 dto02);
 	
+	@Insert("""
+			INSERT INTO MyTable39(Col2, Col3)
+			VALUES(#{prop2}, #{prop3})
+			""")
+	// useGeneratedKeys를 쓰지 않아도 db에서는 자동으로 증가하지만
+	// 나는 지금 prop1에 자동증가한 key값을 담아서 보고 싶으니까!
+	// 기본값이 false인 애를 true로 변경! 자동 증가하는 애를 쓰겠다! true
+	@Options(useGeneratedKeys = true, keyProperty="prop1")
+	int sql07(Dto11 dto);
 	
-	
-	
+	@Insert("""
+			INSERT INTO MyTable40(Age, Name, Score)
+			VALUES(#{age}, #{name}, #{score})
+			""")
+	@Options(useGeneratedKeys = true, keyProperty = "id")
+	int sql08(Dto12 dto);
 	
 	
 	

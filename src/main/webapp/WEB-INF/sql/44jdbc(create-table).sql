@@ -76,3 +76,18 @@ CREATE TABLE MyTable38(
     Col5 DEC(10, 3),
     Col6 DEC(10, 3)
 );
+
+SELECT * FROM MyTable38;
+
+CREATE TABLE MyTable39(
+	Col1 INT PRIMARY KEY AUTO_INCREMENT,
+    Col2 VARCHAR(300),
+    Col3 INT
+);
+
+DESC MyTable39;
+
+INSERT INTO MyTable39(Col2, Col3)
+VALUES ('HELLO', 99);
+
+SELECT * FROM MyTable39;
