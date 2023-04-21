@@ -49,3 +49,20 @@ CREATE TABLE MyTable32 (
 DESC MyTable32;
 
 SELECT * FROM MyTable32;
+
+SELECT * FROM Suppliers;
+
+CREATE TABLE PPPYONG (
+	Number INT,
+    Sdate DATE,
+    Trip DATETIME,
+    School VARCHAR(20),
+    ScoreAvg DEC(10,2)
+);
+
+DESC PPPYONG;
+
+SELECT * FROM PPPYONG;
+DELETE FROM PPPYONG 
+WHERE Number = 7;
+

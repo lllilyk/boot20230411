@@ -16,6 +16,12 @@ public class Controller20 {
 	@Autowired
 	private Mapper01 mapper;
 	
+	@RequestMapping("link0")
+	public void method00() {
+		Integer id = mapper.method00();
+		System.out.println(id);
+	}
+	
 	@RequestMapping("link1")
 	public void method01() {
 		
@@ -41,6 +47,13 @@ public class Controller20 {
 		//5번 고객 이름을 조회하겠다.
 		String name = mapper.method04(5);
 		System.out.println(name);
+		
+	}
+	
+	@RequestMapping("link33")
+	public void method033() {
+		int id = mapper.method44("정대만");
+		System.out.println(id);
 	}
 	
 	// link4?id=70
@@ -110,4 +123,9 @@ public class Controller20 {
 		Employee emp = mapper.method14();
 		System.out.println(emp);
 	}
+	
+	
+	
+	
+	
 }

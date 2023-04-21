@@ -9,6 +9,13 @@ import com.example.demo.controller.domain.*;
 @Mapper
 public interface Mapper01 {
 	
+	@Select("""
+			SELECT EmployeeID
+			FROM Employees
+			WHERE LastName = 'LEE'
+			""")
+	Integer method00();
+	
 	// 인터페이스에서 만드는 메소드는 모두 추상메소드이므로 public 생략 가능
 	@Select("""
 			SELECT CustomerName
@@ -34,13 +41,22 @@ public interface Mapper01 {
 			""")
 	String method03();
 	
+	
 	@Select("""
 			SELECT CustomerName
 			FROM Customers
 			WHERE CustomerID = #{id}
 			""")
 	String method04(Integer id);
-
+	
+	
+	@Select("""
+			SELECT CustomerID
+			FROM Customers
+			WHERE  CustomerName = #{name}
+			""")
+	int method44(String name);
+	
 	@Select("""
 			SELECT LastName
 			FROM Employees
