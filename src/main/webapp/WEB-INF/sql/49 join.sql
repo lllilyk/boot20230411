@@ -43,4 +43,37 @@ FROM OrderDetails od JOIN Orders o ON od.OrderID = o.OrderID
 GROUP BY o.OrderDate
 ORDER BY o.OrderDate ASC;
 
+SELECT * FROM Orders;
+SELECT * FROM OrderDetails;
+SELECT * FROM Products;
+SELECT * FROM Employees;
 
+-- 직원별 처리금액
+SELECT
+ e.EmployeeID,
+ e.LastName,
+ e.FirstName,
+ SUM(p.Price * od.Quantity) 매출 
+FROM Orders o JOIN Employees e ON o.EmployeeID = e.EmployeeID
+              JOIN OrderDetails od ON o.OrderID = od.OrderID
+              JOIN Products p ON od.ProductID = p.ProductID
+WHERE o.OrderDate BETWEEN '1997-01-01' AND '1997-01-31'
+GROUP BY e.EmployeeID
+ORDER BY 매출 DESC;
+
+-- 상품별 판매금액
+SELECT p.ProductID, p.ProductName, SUM(od.Quantity * p.Price) 판매금액 
+FROM 
+	Orders o JOIN OrderDetails od ON o.OrderID = od.OrderID
+             JOIN Products p ON od.ProductID = p.ProductID
+GROUP BY p.ProductID
+ORDER BY 판매금액 DESC;
+
+-- 고객별 소비금액
+SELECT c.CustomerID, c.CustomerName, SUM(p.Price * od.Quantity) 구매금액 
+FROM
+	Orders o JOIN OrderDetails od ON o.OrderID = od.OrderID
+		     JOIN Customers c ON o.CustomerID = c.CustomerID
+             JOIN Products p ON od.ProductID = p.ProductID
+GROUP BY c.CustomerID
+ORDER BY 구매금액 DESC;

@@ -6,7 +6,6 @@ import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.controller.domain.*;
-import com.example.demo.domain.*;
 import com.example.demo.mapper.*;
 
 @Controller
