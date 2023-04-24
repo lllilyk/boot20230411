@@ -49,22 +49,34 @@ public class Controller24 {
 	}
 
 	@RequestMapping("link5")
-	public void method(Customer customer) {
+	public void method05(Customer customer) {
 		int cnt = mapper.sql04(customer);
 		System.out.println(cnt + "개 행 수정됨");
 	}
 	
 	// /sub24/link6?id=9
 	@RequestMapping("link6")
-	public void method(Integer id, Model model) {
+	public void method06(Integer id, Model model) {
 		Customer customer = mapper.sql05(id);
 		model.addAttribute("customer", customer);
 	}
 
 	//직원 조회 및 수정 코드 작성
-	
+	//조회 
+	//경로 : /sub24/link7?id=12
+	@RequestMapping("link7")
+	public void method7(Integer id, Model model) {
+		Employee emp = mapper.sql06(id);
+		model.addAttribute("employee", emp);
+	}
 
-
+	//수정
+	//경로 : /sub24/link8
+	@RequestMapping("link8")
+	public void method8(Employee e) {
+		int cnt = mapper.sql07(e);
+		System.out.println(cnt + "개 행 수정됨");
+	}
 
 }
 

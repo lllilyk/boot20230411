@@ -2,6 +2,8 @@
 SELECT * FROM Customers
 WHERE Country = 'Germany' OR Country = 'France';
 
+SELECT * FROM Employees WHERE EmployeeID = 12;
+DESC Customers;
 SELECT * FROM Customers
 WHERE Country IN ('Germany', 'France');
 

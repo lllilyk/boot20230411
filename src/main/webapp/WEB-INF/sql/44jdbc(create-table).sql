@@ -91,3 +91,18 @@ INSERT INTO MyTable39(Col2, Col3)
 VALUES ('HELLO', 99);
 
 SELECT * FROM MyTable39;
+SELECT * FROM Customers WHERE CustomerID <= 10 ORDER BY 1 DESC;
+desc MyTable39;
+
+SELECT * FROM Customers;
+
+
+CREATE TABLE MyTable40(
+	Id INT PRIMARY KEY AUTO_INCREMENT,
+    Age INT,
+	Name VARCHAR(30),
+    SCORE DEC(10, 3)
+);
+
+SELECT * FROM MyTable40;
+
