@@ -1,13 +1,19 @@
 -- UNIQUE : 중복 허용 안함
+USE w3schools;
+
 CREATE TABLE MyTable21(
 	Col1 INT,
-    Col2 INT UNIQUE -- 각 행의 서로 다른 값을 가지고 있는 column : key
+    Col2 INT UNIQUE       -- 각 행의 서로 다른 값을 가지고 있는 column : key
 );
+
+DESC MyTable21;
 
 INSERT INTO MyTable21 (Col1, Col2)
 VALUES (1, 1); -- OK
 INSERT INTO MyTable21 (Col1, Col2)
 VALUES (2, 2); -- OK
+ 
+-- UNIQUE 설정이 Col2에만 해당되기 때문에 Col1에는 같은 값이 들어가도 실행됨
 INSERT INTO MyTable21 (Col1, Col2)
 VALUES (2, 3); -- OK
 
