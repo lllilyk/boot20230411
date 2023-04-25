@@ -13,3 +13,4 @@ CREATE TABLE Board (
     inserted DATETIME DEFAULT NOW()
 );
 
+DESC Board;
