@@ -28,7 +28,7 @@ SELECT * FROM Employee e1 JOIN Employee e2;
 -- 1) 매니저id와 id가 같은 직원의 연봉
 SELECT salary FROM Employee e2 WHERE e2.id = e2.managerId;
 -- 2) 그 연봉을 받는 직원은 누구?
-SELECT name FROM Employee e1 WHERE salary < (SELECT salary FROM Employee e2 WHERE e2.id = e2.managerId);
+SELECT name FROM Employee e1 WHERE salary > (SELECT salary FROM Employee e2 WHERE e2.id = e1.managerId);
 
 
 SELECT name
