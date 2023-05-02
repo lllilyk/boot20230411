@@ -26,3 +26,24 @@ SELECT * FROM Board b JOIN FileName f
 ON b.id = f.boardId
 WHERE b.id = 25582;
 
+-- 첫 페이지의 게시물 5개까지 보기
+-- 파일 존재 여부는 알 수 없음 
+USE Board;
+SELECT * FROM Board 
+ORDER BY id DESC
+LIMIT 0,5;
+
+-- 최신 5개의 게시물 중 파일이 있는 게시물만 조회
+-- fileName만 다른 중복된 게시물도 조회됨
+SELECT * 
+FROM Board b JOIN FileName f ON b.id = f.boardId 
+ORDER BY b.id DESC
+LIMIT 0,5;
+
+-- 여러 파일이 있는 게시물까지 중복없이 조회
+SELECT *, 
+	COUNT(f.id) fileCount
+FROM Board b LEFT JOIN FileName f ON b.id = f.boardId 
+GROUP BY b.id
+ORDER BY b.id DESC
+LIMIT 0,5;
