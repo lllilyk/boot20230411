@@ -56,3 +56,13 @@ WHERE b.id = 32766;
 SELECT fileName
 FROM Board b JOIN FileName f ON b.id = f.boardId
 WHERE fileName IS NOT NULL AND b.id = 32766;
+
+SELECT *
+FROM Board b JOIN FileName f ON b.id = f.boardId
+WHERE b.id = 32768;
+
+DELETE FROM FileName
+WHERE boardId = 32766;
+
+
+select * from fileName where FileName;
