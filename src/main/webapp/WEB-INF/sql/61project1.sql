@@ -47,3 +47,12 @@ FROM Board b LEFT JOIN FileName f ON b.id = f.boardId
 GROUP BY b.id
 ORDER BY b.id DESC
 LIMIT 0,5;
+
+SELECT *, 
+	COUNT(f.id) fileCount
+FROM Board b LEFT JOIN FileName f ON b.id = f.boardId 
+WHERE b.id = 32766;
+
+SELECT fileName
+FROM Board b JOIN FileName f ON b.id = f.boardId
+WHERE fileName IS NOT NULL AND b.id = 32766;
