@@ -18,7 +18,7 @@ public class MyConfig2 {
 			throws Exception {
 		http.formLogin()
 				.loginPage("/sub33/mylogin")
-				.defaultSuccessUrl("/list", true)
+				.defaultSuccessUrl("/sub33/loginSuccess", true)
 				.usernameParameter("id") // username
 				.passwordParameter("pw"); // password
 
