@@ -145,7 +145,8 @@ $("#btn9").click(function(){
 	const name = $("#inputName2").val();
 	const email = $("#inputEmail").val();
 	const score = $("#inputScore").val();
-	const married = $("#inputMarried").val();
+	const married = $("#inputMarried").is(":checked");
+	//const married2 = document.querySelector("#inputMarried2").Checked;
 	
 	const obj = {
 		name : name,
