@@ -15,10 +15,10 @@ CREATE TABLE Comment (
 );
 
 INSERT INTO Comment (boardId, content, memberId)
-VALUES (user1, '댓글 하나', 'user9');
+VALUES (32787, '댓글 하나', 'user1');
 INSERT INTO Comment (boardId, content, memberId)
-VALUES (aa, '댓글 둘', 'user9');
+VALUES (32787, '댓글 둘', 'user1');
 INSERT INTO Comment (boardId, content, memberId)
-VALUES (32794, '댓글 셋', 'user9');
+VALUES (32787, '댓글 셋', 'user1');
 
 
